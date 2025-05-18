@@ -3,33 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scope</title>
+    <title>JS Object</title>
     <script>
-        let globalScope = "This is global scope";
-        function myFunction(){
-            let functionScope = "This is local scope";
-            console.log(globalScope);
-            console.log(functionScope);
-        }
         
-        myFunction2();
-
-
-        function myFunction2(){
-            console.log(globalScope);
-           // console.log(functionScope);
+        let student = {
+            name: "Sumudu",
+            age: 20,
+            //method
+            sayHi: function(){
+                console.log("Hello " + this.name);
+            }
         }
 
-        {
-            let blockScope = "This is block scope";
-            console.log(blockScope); 
+        student.sayHi();
+        console.log(student.name);
+        console.log(student.age);
+
+        student.name = "Sumudu Disantha";
+        console.log(student.name);
+
+        student.sayHello = function(){
+            console.log("Hello " );
         }
 
-        myFunction();
-        myFunction2();
+        student.sayHello();
+
+        student.address = "Kandy";
+        console.log(student);
+
+        delete student.age;
+        console.log(student);
+
+
+        //common object methods
+
+        console.log(Object.keys(student));
+        console.log(Object.values(student));
+        console.log(Object.entries(student));
+
+        let student2 = {
+            name: "Kamala",
+            isMarried: "false"
+           
+        }
+
+        console.log(student2);
+
+        Object.assign(student2, student);
+        console.log(student2);
+
+
     </script>
 </head>
 <body>
-    <h1>Scope</h1>
+    <h1>javascript Object</h1>
 </body>
 </html>
