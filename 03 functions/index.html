@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <script>
+        
+        function displayNAme(){
+            
+            let firstName = "John";
+            let lastName = "Doe";   
+            console.log("Hello " + firstName + " " + lastName);
+        
+        }
+
+        displayNAme();
+        displayNAme();
+
+        //parameters functions
+        function displayFullName(firstName, lastName){
+            console.log("Hello " + firstName + " " + lastName);
+        }
+
+        displayFullName("Sumudu", "Disantha");
+
+        //return value
+
+        function getInfo(fullName,age){
+            let output = fullName + " is " + age + " years old";
+            return output;
+        }
+
+        let info = getInfo("Sumudu Disantha", 20);
+        console.log(info);
+    </script>
+</head>
+<body>
+    <h1>Functions</h1>
+</body>
+</html>
