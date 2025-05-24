@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+</head>
+<body>
+    <h1 id="title">JavaScript document object model</h1>
+
+    <p id="text" class="paragraph">
+        Testing
+    </p>
+    <p class="paragraph">
+        second class
+    </p>
+
+    <a class="textGreen" id = "link" href="https://www.google.com">Google</a>
+
+    <button>Press Me</button>
+
+
+    <style>
+        .textGreen{
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        
+        let titleElement = document.getElementById("title");
+
+
+        console.log(titleElement);
+
+        console.log(titleElement.innerHTML);
+
+        titleElement.innerHTML = "Changed";
+
+        console.log(titleElement.innerHTML);
+
+        let paragraph = document.getElementsByClassName("paragraph");
+
+        console.log(paragraph);
+
+        let textList = document.getElementsByTagName("p");
+
+        console.log(textList);
+
+        let myLink = document.getElementById("link");
+        myLink.href = "https://www.facebook.com";
+
+        myLink.innerHTML = "Facebook";
+
+        //myLink.style.color = "red";
+
+     //   myLink.classList.add("textGreen");
+
+     myLink.classList.remove("textGreen");
+
+        console.log(myLink);
+
+
+
+
+    </script>
+</body>
+</html>

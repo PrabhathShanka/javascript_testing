@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparison and logical operator</title>
+  </head>
+  <body>
+    <h1>Comparison and logical operator</h1>
+
+    <label for="input1">Input 1</label>
+    <input type="text" id="input1" />
+    <br />
+    <br />
+    <label for="input2">Input 2</label>
+    <input type="text" id="input2" />
+    <br />
+    <br />
+    <button onclick="compare()">Compare</button>
+    <div id="result"></div>
+
+    <script>
+      function compare() {
+        let input1 = document.getElementById("input1").value;
+        let input2 = document.getElementById("input2").value;
+
+        //convert string to number
+        input1 = Number(input1);
+        input2 = Number(input2);
+
+        //OR
+
+        // input1 = parseInt(input1);
+        // input2 = parseInt(input2);
+
+        //OR
+
+        // input1 = parseFloat(input1);
+        // input2 = parseFloat(input2);
+
+        console.log(input1, input2);
+        console.log(typeof input1, typeof input2);
+
+        let output = "";
+
+        if (input1 == input2) {
+          output = "Input 1 == Input 2 <br>";
+        }
+
+        if (input1 === input2) {
+          output += "Input 1 === Input 2 <br>";
+        }
+        if (input1 != input2) {
+          output += "Input 1 != Input 2 <br>";
+        }
+        if (input1 !== input2) {
+          output += "Input 1 !== Input 2 <br>";
+        }
+        if (input1 > input2) {
+          output += "Input 1 > Input 2 <br>";
+        }
+        if (input1 < input2) {
+          output += "Input 1 < Input 2 <br>";
+        }
+        if (input1 >= input2) {
+          output += "Input 1 >= Input 2 <br>";
+        }
+        if (input1 <= input2) {
+          output += "Input 1 <= Input 2 <br>";
+        }
+
+        output += "--------------------------------------------<br>";
+
+        //logical operator
+        if (input1 > 10 && input2 > 10) {
+          output += "Input 1 > 10 AND Input 2 > 10 <br>";
+        }
+        if (input1 > 10 || input2 > 10) {
+          output += "Input 1 > 10 OR Input 2 > 10 <br>";
+        }
+        if(!(input1>10)){
+            output += "NOT Input 1 > 10 <br>";
+        }
+
+        document.getElementById("result").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
