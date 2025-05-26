@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop and Iteration</title>
+  </head>
+  <body>
+    <h1>Loop and Iteration</h1>
+    <ul id="list">
+      <li>fist line</li>
+    </ul>
+
+    <script>
+      let list = document.getElementById("list");
+      let listItem = document.createElement("li");
+      let text = document.createTextNode("Hello World");
+      listItem.appendChild(text);
+      list.appendChild(listItem);
+
+      // for loop
+      for (let i = 0; i < 10; i++) {
+        if(i%2 == 1){
+          continue;
+        }
+        let listItem = document.createElement("li");
+        let text = document.createTextNode("for loop number = " + i);
+        listItem.appendChild(text);
+        document.getElementById("list").appendChild(listItem);
+      }
+
+      //while loop
+      let x = 10;
+      while (x > 0) {
+        let listItem = document.createElement("li");
+        let text = document.createTextNode("while loop number = " + x);
+        listItem.appendChild(text);
+        document.getElementById("list").appendChild(listItem);
+        x--;
+
+        //break
+        if (x == 5) {
+          break;
+        } 
+
+      }
+
+      //do while loop
+      let y = 10;
+      do {
+        let listItem = document.createElement("li");
+        let text = document.createTextNode("do while loop number = " + y);
+        listItem.appendChild(text);
+        document.getElementById("list").appendChild(listItem);
+        y--;
+      } while (y > 0);
+
+      //forEach loop
+      let myArray = [1, 2, 3, 4, 5];
+      myArray.forEach((item) => {
+        let listItem = document.createElement("li");
+        let text = document.createTextNode("forEach loop number = " + item);
+        listItem.appendChild(text);
+        document.getElementById("list").appendChild(listItem);
+      });
+
+      //for in loop
+      let user = {
+        name: "shanka",
+        age: 20,
+        address: "kandy",
+        subject: "maths",
+      }
+
+      for (const data in user){
+        console.log(data);
+        console.log(user[data]);
+
+        let documentListItem = document.createElement("li");
+        let documentText = document.createTextNode(data + " = " + user[data]);
+        documentListItem.appendChild(documentText);
+        document.getElementById("list").appendChild(documentListItem);
+      }
+
+      //array
+      let myArray2 = ['nimal', 'shanka', 'sumudu', 'dhananjaya'];
+      myArray2.forEach((item) => {
+        let listItem = document.createElement("li");
+        let text = document.createTextNode(item);
+        listItem.appendChild(text);
+        document.getElementById("list").appendChild(listItem);
+      });
+
+      for (const mydata in myArray2){
+        let listItem = document.createElement("li");
+        let text = document.createTextNode(mydata);
+        listItem.appendChild(text);
+        document.getElementById("list").appendChild(listItem);
+        
+        let text2 = document.createTextNode(myArray2[mydata]);
+        document.getElementById("list").appendChild(text2);
+      }
+
+      //for of
+
+      for(const data of myArray2){
+        let listItem = document.createElement("li");
+        let text = document.createTextNode(data);
+        listItem.appendChild(text);
+        document.getElementById("list").appendChild(listItem);
+      }
+
+      let users = [
+        {name: 'shanka', age: 10},
+        {name: 'dhananjaya', age: 20},
+        {name: 'nimal', age: 40},
+        {name: 'sumudu', age: 50},
+      ]
+
+      let names =[];
+      for(let user of users){
+        names.push(user.name);
+      }
+
+      console.log(names);
+
+      //map
+      let age = users.map(function(user){
+        return user.age
+      })
+
+      console.log(age);
+
+      //filter
+      let filtered = users.filter(function(user){
+        return user.age > 30
+      })
+
+      console.log(filtered);
+
+
+    </script>
+  </body>
+</html>
