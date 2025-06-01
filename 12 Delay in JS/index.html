@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delay in JS</title>
+  </head>
+  <body>
+    <h1>Delay in JS</h1>
+    <button id="button">Click Me</button>
+
+    <p id="output"></p>
+    <script>
+      const button = document.getElementById("button");
+      const output = document.getElementById("output");
+      function pressed() {
+        output.innerHTML = "set time";
+        setTimeout(function () {
+          output.innerHTML = "Button released";
+        }, 2000);
+      }
+
+      button.onclick = pressed;
+
+      //  setTimeout(pressed, 10000);
+
+      //set interval
+      function animation() {
+        output.style.backgroundColor = "red";
+        setTimeout(function () {
+          output.style.backgroundColor = "blue";
+          setTimeout(function () {
+            output.style.backgroundColor = "green";
+            setTimeout(function () {
+              output.style.backgroundColor = "yellow";
+              setTimeout(function () {
+                output.style.backgroundColor = "black";
+                setTimeout(function () {
+                  output.style.backgroundColor = "white";
+                }, 3000);
+              }, 3000);
+            }, 3000);
+          }, 3000);
+        }, 3000);
+      }
+
+      //setInterval(animation);
+      setInterval(animation, 3000);
+    </script>
+  </body>
+</html>

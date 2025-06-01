@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event listeners</title>
+  </head>
+  <body>
+    <h1>Event listeners</h1>
+
+    <!-- <button onclick="runMe()">Click Me</button> -->
+    <button id="myButton">Click Me</button>
+
+
+    <script>
+      function runMe(){
+        console.log("Running");
+      }
+
+      // const myButton = document.getElementById("myButton");
+      
+      // myButton.addEventListener("click",runMe);
+
+      //this one line is same as above
+
+      // document.getElementById("myButton").addEventListener("click",runMe);
+ 
+
+//add single line function
+
+ document.getElementById("myButton").addEventListener("click",function(){
+  console.log("running");
+ });
+
+
+
+ </script>
+  </body>
+</html>
